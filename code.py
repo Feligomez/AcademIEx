@@ -5,7 +5,6 @@ class Course:
         self.subject = subject
         self.duration = duration
 
-
 class Student:
     def __init__(self, name, age, degree, year):
         self.name = name
@@ -24,7 +23,6 @@ class Student:
 
     def calculate_mean_goal(self):
         return sum(self.goals.values()) / len(self.goals) if len(self.goals) > 0 else 0
-
 
 def calculate_priority(student, subject):
     if subject not in student.marks or subject not in student.goals:
@@ -48,7 +46,6 @@ def calculate_priority(student, subject):
         return 4, difference
     else:
         return 2, difference
-
 
 def recommend_courses(student, all_courses, weeks_remaining):
     recommended_courses = {}
@@ -84,7 +81,6 @@ def recommend_courses(student, all_courses, weeks_remaining):
                       "priority": recommended_courses[subject]["priority"],
                       "difference": recommended_courses[subject]["difference"]} for subject in sorted_subjects}
 
-
 def get_student_details():
     name = input("Enter student's name: ")
     age = int(input("Enter student's age: "))
@@ -99,7 +95,6 @@ def get_student_details():
         student.add_mark(course, mark, goal)
 
     return student
-
 
 def display_recommendations(student, weeks_remaining):
     recommended_courses = recommend_courses(student, courses, weeks_remaining)
@@ -121,7 +116,6 @@ def display_recommendations(student, weeks_remaining):
                 print(f"  {course.name} — (Estimated time for completion: {course.duration} weeks)")
             print("\n————————————————————————————————————")
 
-
 def display_profile(student):
     print(f"\nStudent Profile for {student.name}:")
     print(f"  Name: {student.name}")
@@ -142,35 +136,12 @@ def display_profile(student):
     print(f"\nMean Mark: {mean_mark:.2f}")
     print(f"Mean Goal: {mean_goal:.2f}")
     print("Performance: ", end="")
-    if mean_mark < mean_goal:
+    if 1.1 * mean_mark < mean_goal:
         print("Far Below Expectations")
     elif mean_mark > mean_goal * 1.5:
         print("Far Above Expectations")
     else:
         print("On Track")
-
-
-class User:
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
-
-
-class AuthSystem:
-    def __init__(self):
-        self.users = []
-        self.current_user = None
-
-    def add_user(self, username, password):
-        self.users.append(User(username, password))
-
-    def sign_in(self, username, password):
-        for user in self.users:
-            if user.username == username and user.password == password:
-                self.current_user = user
-                return True
-        return False
-
 
 def change_marks_goals(student):
     subject = input("Enter the subject for which you want to change marks and goals: ")
@@ -182,7 +153,6 @@ def change_marks_goals(student):
         print(f"Marks and goals updated for {subject}.")
     else:
         print(f"You haven't entered marks and goals for {subject} yet.")
-
 
 # Sample courses (duration in weeks)
 courses = [
@@ -214,27 +184,6 @@ courses = [
 # Sample student
 student1 = get_student_details()
 
-# Create an instance of the authentication system
-auth_system = AuthSystem()
-
-# Add a sample user to the authentication system
-auth_system.add_user("user1", "password123")
-
-# Function to get user input for sign-in
-def sign_in():
-    while True:
-        username = input("Enter your username: ")
-        password = input("Enter your password: ")
-
-        if auth_system.sign_in(username, password):
-            print("Sign-in successful!")
-            break
-        else:
-            print("Invalid username or password. Please try again.")
-
-# Sign in before accessing other features
-sign_in()
-
 # Input weeks
 weeks_remaining = int(input("Enter the number of weeks remaining until final exams: "))
 
@@ -259,5 +208,7 @@ while True:
         break
     else:
         print("Invalid choice. Please enter 1, 2, 3, or 4.")
+
+
 
 
