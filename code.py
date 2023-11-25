@@ -192,29 +192,28 @@ def change_marks_goals(student):
 
 # Courses (duration in weeks, hours per day)
 courses = [
-    Course("QuizletTech1", "Technology", 1, 1),
-    Course("QuizletTech2", "Technology", 1, 1),
-    Course("TechLab1", "Technology", 2, 3),
-    Course("TechLab2", "Technology", 2, 3),
-    Course("Udemy's Flutterflow Course", "Technology", 2, 2),
-    Course("TechProject2", "Technology", 4, 4),
-    Course("YouTubeMath1", "Math", 2, 1),
-    Course("YouTubeMath2", "Math", 2, 2),
-    Course("QuizletMkt1", "Marketing Management", 1, 1),
-    Course("QuizletMkt2", "Marketing Management", 1, 1),
-    Course("BookMkt", "Marketing Management", 2, 2),
-    Course("KhanAcademyMkt0", "Marketing Management", 3, 2),
-    Course("KhanAcademyMkt1", "Marketing Management", 3, 2),
-    Course("KhanAcademyMkt2", "Marketing Management", 3, 3),
-    Course("AdvancedBookMkt", "Marketing Management", 4, 2),
-    Course("AdvancedYouTubeStat", "Statistics", 4, 3),
+    Course("Linear Algebra: Final Exam Review by Dr.Valerie Hower (Youtube)", "Math", 1, 2),
+    Course("Brilliant.org Linear Algebra Practice", "Math", 2, 2),
+    Course("MIT OpenCourseWare Linear Algebra Course, Unit I and Unit II", "Math", 3, 1),
+    Course("Khan Academy Linear Algebra", "Math", 3, 2),
+    Course("MyLab Pearson Exercises", "Marketing Management", 2, 2),
+    Course("Quizlet Marketing Management Flashcards", "Marketing Management", 1, 2),
+    Course("SCRIBD Marketing Management - Question Bank by NMIMS GA ", "Marketing Management", 2, 2),
+    Course("Brilliant.org Interactive Statistics Lessons", "Statistics", 3, 2),
+    Course("Logistic Regression playlist by StatQuest with Josh Starmer (Youtube)", "Statistics", 1, 1),
+    Course("Linear Regression and Linear Models playlist by StatQuest with Josh Starmer (Youtube)", "Statistics", 1, 1),
+    Course("PCA Videos by StatQuest with Josh Starmer (Youtube)", "Statistics", 2, 1),
     Course("Data Structures & Algorithms Playlist by CS Dojo (Youtube)", "Algorithms & Data Structures", 2, 2),
     Course("Algorithms and Data Structures Tutorial by freeCodeCamp.org (Youtube)", "Algorithms & Data Structures", 1, 2),
-    Course("Coursera", "Algorithms & Data Structures", 3, 2),
-    Course("Ted Talks", "Building Powerful Relationships", 1, 1),
-    Course("Mind map practice", "Building Powerful Relationships", 1, 2),
-    Course("YouTubeProg1", "Programming for Data Management & Analysis", 3, 2),
-    Course("YouTubeProg2", "Programming for Data Management & Analysis", 3, 2),
+    Course("Brilliant.org Learn Algorithms for free", "Algorithms & Data Structures", 2, 3),
+    Course("Grooking Algorithms Book brief readings", "Algorithms & Data Structures", 2, 1),
+    Course("4 Tips To IMPROVE Your Public Speaking - How to CAPTIVATE an Audience by Motivation2study (Youtube)", "Building Powerful Relationships", 1, 1),
+    Course("Python Tutorial - Python Full Course for Beginners by Programing with Mosh (Youtube)", "Programming for Data Management & Analysis", 2, 1),
+    Course("Python MCQs: Basics of Python, by Learnpython4cbse", "Programming for Data Management & Analysis", 1, 2),
+    Course("Python MCQs: Python Pandas: Series, by Learnpython4cbse", "Programming for Data Management & Analysis", 2, 2),
+    Course("Pandas Turotials playlist by Corey Schafer (Youtube)", "Programming for Data Management & Analysis", 2, 1),
+    Course("Python for Beginners - Learn Python in 1 Hour by Programing with Mosh (Youtube)", "Programming for Data Management & Analysis", 1, 1),
+
 ]
 
 # Sample student
@@ -237,6 +236,7 @@ while True:
     if choice == '1':
         display_recommendations(student1, weeks_remaining)
     elif choice == '2':
+        recommended_courses = recommend_courses(student1, courses, weeks_remaining)
         generate_schedule(student1, recommended_courses)
     elif choice == '3':
         display_profile(student1)
@@ -247,6 +247,9 @@ while True:
         break
     else:
         print("Invalid choice. Please enter 1, 2, 3, 4 or 5.")
+
+
+
 
 
 
