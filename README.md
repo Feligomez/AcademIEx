@@ -58,6 +58,15 @@ The app does not require any external dependencies beyond a Python interpreter (
 - The app uses a basic priority scoring system to recommend courses, and the study schedule generation follows a simple greedy approach.
 - Expected formats are assumed to be followed. Error handling for unexpected inputs is not implemented — exceptions are not accounted for.
 
+## Future improvements
+
+This app is still on a very early development stage. Future developments upon them are very welcome, and could include:
+- A seminar recommendation system taking into account specific interests
+- Difficulty levels for the courses
+- An increase in the number of courses (and a more proficient and perhaps topic-based selection)
+- An account creation function that stores data to avoid inputing all data every time the code is run
+- Visual / aesthetic improvements.
+
 ## Authors
 
 Gonzalo Domínguez, Sarah Coste, Eli Homsi, Sergio García, Felipe Gómez
