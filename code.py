@@ -12,7 +12,7 @@ class Student:
         self.age = age
         self.degree = degree
         self.year = year
-        self.marks = {}
+        self.marks = {} #empty dictionary
         self.goals = {}
 
     def add_mark(self, subject, mark, goal):
@@ -53,13 +53,13 @@ def calculate_priority(student, subject):
     elif difference < 0:
         return 4, difference
     else:
-        return 2, difference
+        return 0, difference
 
 def recommend_courses(student, all_courses, weeks_remaining):
     recommended_courses = {}
 
     for course in all_courses:
-        if course.weeks <= weeks_remaining:
+        if course.weeks <= weeks_remaining: #condition — if not met, avoid said course.
             priority_score, difference = calculate_priority(student, course.subject)
             if priority_score > 0:
                 if course.subject not in recommended_courses:
@@ -172,7 +172,7 @@ def display_profile(student):
     print(f"\nMean Mark: {mean_mark:.2f}")
     print(f"Mean Goal: {mean_goal:.2f}")
     print("Performance: ", end="")
-    if 1.05 * mean_mark < mean_goal:
+    if 1.1 * mean_mark < mean_goal:
         print("Far Below Expectations")
     elif mean_mark > mean_goal * 1.5:
         print("Far Above Expectations")
@@ -247,8 +247,6 @@ while True:
         break
     else:
         print("Invalid choice. Please enter 1, 2, 3, 4 or 5.")
-
-
 
 
 
