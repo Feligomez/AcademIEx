@@ -2,7 +2,7 @@
 
 ## Overview
 
-AcademIEx is a Python application (run on console) designed to help IE students track their performance and improve upon it by recommending courses and seminars to follow before facing the final exams, depending on their academic goals. Besides showing plain recommendations, it also provides a recommended schedule based on the number of available hours the student has for each day of a week.
+AcademIEx is a Python application (run on console) designed to help IE students track their performance and improve upon it by recommending courses to follow before facing the final exams, depending on their academic goals. Besides showing plain recommendations, it also provides a recommended schedule based on the number of available hours the student has for each day of a week.
 
 ## Features
 
@@ -38,7 +38,7 @@ The app features an interactive menu that allows users to:
 ## How to Use
 
 1. Make sure you have a Python interpreter installed.
-2. Run the Python script (`student_planner.py`).
+2. Run the Python script (`academIEx.py`).
 3. Input your student data — name, age, degree and year.
 4. Input your latest updated mark and your goal for each subject.
 5. Input the number of weeks remaining until the final exams — this will help the recommendations tab work properly.
