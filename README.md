@@ -54,6 +54,7 @@ The app does not require any external dependencies beyond a Python interpreter (
 
 ## Notes
 
+— When asked for a digit (age, marks, goals), please input the nearest integer to the correct value — the system is not acquainted with decimals and will throw an exception.
 - The app uses a basic priority scoring system to recommend courses, and the study schedule generation follows a simple greedy approach.
 - Expected formats are assumed to be followed. Error handling for unexpected inputs is not implemented — exceptions are not accounted for.
 
