@@ -52,8 +52,10 @@ def calculate_priority(student, subject):
         return 5, difference
     elif difference < 0:
         return 4, difference
+    elif difference == 0:
+        return 3, difference
     else:
-        return 0, difference
+        return 0, difference #null priority, meaning they won't show up — if you have surpassed your goal, then you're good.
 
 def recommend_courses(student, all_courses, weeks_remaining):
     recommended_courses = {}
@@ -70,7 +72,7 @@ def recommend_courses(student, all_courses, weeks_remaining):
                 recommended_courses[course.subject]["difference"] = max(
                     recommended_courses[course.subject]["difference"], difference)
 
-    sorted_subjects = sorted(recommended_courses.keys(), key=lambda x: recommended_courses[x]["priority"], reverse=True)
+    sorted_subjects = sorted(recommended_courses.keys(), key=lambda x: recommended_courses[x]["priority"], reverse=True) #sorts per priority (previously outlined)
 
     for subject in recommended_courses:
         courses_list = recommended_courses[subject]["courses"]
@@ -82,7 +84,7 @@ def recommend_courses(student, all_courses, weeks_remaining):
                 if courses_list[j][1] < courses_list[min_index][1]:
                     min_index = j
 
-            courses_list[i], courses_list[min_index] = courses_list[min_index], courses_list[i]
+            courses_list[i], courses_list[min_index] = courses_list[min_index], courses_list[i] #swapping operation for selection sort.
 
     return {subject: {"status": recommended_courses[subject]["status"],
                       "courses": [course[0] for course in recommended_courses[subject]["courses"]],
