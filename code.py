@@ -172,7 +172,7 @@ def display_profile(student):
     print(f"\nMean Mark: {mean_mark:.2f}")
     print(f"Mean Goal: {mean_goal:.2f}")
     print("Performance: ", end="")
-    if 1.1 * mean_mark < mean_goal:
+    if 0.25 + mean_mark < mean_goal:
         print("Far Below Expectations")
     elif mean_mark > mean_goal * 1.5:
         print("Far Above Expectations")
